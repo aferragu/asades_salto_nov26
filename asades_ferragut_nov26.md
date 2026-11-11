@@ -7,288 +7,260 @@ footer: Andrés Ferragut, Universidad ORT Uruguay. ASADES, Salto, noviembre 2026
 math: katex
 transition: fade
 ---
-<!-- _footer: ![h:90](images/logoort.png) --> 
+<!-- _footer: ![h:80](images/logoort.png) --> 
 <!-- _paginate: false -->
 <!-- _class: titleSlide -->
 
+<style>
+/* Estilos del deck que no requieren HTML habilitado.
+   Se activan con la directiva _class de cada diapositiva (conNota, mensaje). */
+section.conNota blockquote {
+  position: absolute; bottom: 55px; left: 70px; right: 70px;
+  margin: 0; padding: 0; border: none;
+  font-size: 11pt; line-height: 1.3; color: rgba(20,50,100,.75);
+}
+section.conNota blockquote::before,
+section.conNota blockquote::after { content: none; }
+section.conNota blockquote p { text-align: left; margin: 0; }
+section.mensaje h3 { text-align: center; color: rgb(20,50,100); }
+</style>
+
 ![bg left:20%](images/fondo.png)
 
-# Electromovilidad: gestionar la red, no solo generar energía
+# Electromovilidad: desafíos para la red eléctrica.
 
 ## Andrés Ferragut - Universidad ORT Uruguay
 
 ### XLVIII Reunión de Trabajo de ASADES
-### Panel "Electromovilidad y baterías de segunda vida"
-### Salto, noviembre 2026
+#### Panel "Electromovilidad y baterías de segunda vida"
+#### Salto, noviembre 2026
 
 ---
 <!-- paginate: true -->
 <!-- class: normalSlide -->
+<!-- _class: normalSlide conNota -->
 
+<style scoped>
+h2, h3 { font-family: Oswald, sans-serif; font-weight: 400; text-align: center; color: rgb(20,50,100); line-height: 1.1; }
+h2 { font-size: 3.2em; margin: 70px 0 0 0; }
+h3 { font-size: 2.4em; margin: 40px 0 0 0; }
+p { text-align: center; color: rgb(20,50,100); margin-top: 10px; }
+h2 + p { font-size: 1.2em; }
+</style>
 
-# Algunos números (2025)
+# La energía está
 
+## ~2.000 GWh/año
 
-<div class="grid grid-cols-2 gap-10" style="font-size: 0.85em; margin-top: 20px;">
-<div>
+para sustituir toda la gasolina del país por electricidad
 
-* Se vendieron **961.000 $m^3$** de gasolinas: unos **12.700 millones de km** (a 13,2 km/l).
-* Sustituirlos requeriría del orden de **2.000 GWh/año** (a ~0,16 kWh/km).
-* Es **~16 %** de lo volcado al SIN en 2025 (13.040 GWh).
-* Exportaciones: **~1.000 GWh** en 2025 y **~2.000 GWh** en 2024, un buen año hidrológico.
+### ≈ 16 % de la generación
 
-</div>
+del orden de lo que se exporta en un buen año hidrológico
 
-<div style="display: flex;
-  justify-content: center;
-  align-items: center;">
+> **Supuestos:** 961.000 m³ de gasolinas (ANCAP, 2025) a 13,2 km/l (Encuesta DNE-AECID 2014) = ~12.700 millones de km; 0,16 kWh/km (4 BEV más vendidos en 2025 + ~10 % de pérdidas de carga + margen por vehículos más grandes). Generación volcada al SIN: 13.040 GWh (MIEM-DNE, 2025). Rango: 1.600-2.600 GWh (12-20 %). No incluye gasoil liviano (~+25-30 %).
 
-<img width=100% src="images/nissan.jpg" />
-
-</div>
-</div>
-
-<div style="position: absolute; bottom: 55px; left: 70px; right: 70px; font-size: 11pt; line-height: 1.3; color: rgb(20,50,100,.75);">
-
-**Supuestos:** solo gasolinas (el gasoil liviano agregaría ~25-30 %). Rendimiento 13,2 km/l (Encuesta DNE-AECID 2014). Consumo 0,16 kWh/km: ~0,13 (4 BEV más vendidos en 2025, ponderado por ventas) + ~10 % de pérdidas de carga + margen por vehículos más grandes. Rango: 1.600-2.600 GWh (12-20 %). **Fuentes:** ANCAP, Memoria 2025; MIEM-DNE, Balances Preliminares 2024 y 2025 (exportaciones 2024: 174 ktep).
-
-</div>
-
----
-# La energía está, el desafío es la red
-
-<h2 style="color: rgb(20,50,100); text-align: center; font-size: 1.3em; margin-top: 30px;"> La energía necesaria es una fracción acotada de la generación actual.<br/>El desafío está en <i>cuándo</i> y <i>dónde</i> se carga. </h2>
-
-<div style="font-size: 0.9em;">
-
-* ~2.000 GWh/año son unos 5,6 GWh por día. Cargados en una ventana nocturna de 8 h: del orden de **700 MW** adicionales, frente a un máximo de demanda del sistema de ~2.500 MW.
-* Si toda la carga fuera domiciliaria, sería del orden de **+45 %** sobre el consumo residencial de UTE.
-* La **carga rápida** concentra mucha potencia en un solo punto: puede exigir reforzar la conexión.
-
-</div>
-
-<p style="text-align: center; color: rgb(20,50,100);"><b>Hay que gestionar la red para evitar la congestión, sin depender de grandes inversiones.</b></p>
-
-<div style="position: absolute; bottom: 55px; left: 70px; right: 70px; font-size: 11pt; line-height: 1.3; color: rgb(20,50,100,.75);">
-
-Cálculos ilustrativos: carga uniforme en 8 h; máximo de demanda 2.507 MW (7/3/2025, BEN 2025); consumo residencial UTE 4.488 GWh en 2024 (INE, Anuario Estadístico 2025, suma de tarifas residenciales).
-
-</div>
+<!--
+Notas:
+- 961.000 m³ de gasolinas vendidas en 2025 (ANCAP) → ~12.700 millones de km a 13,2 km/l.
+- A ~0,16 kWh/km → ~2.050 GWh/año.
+- Generación volcada al SIN 2025: 13.040 GWh → ~16 %.
+- Exportaciones: ~1.000 GWh en 2025; ~2.000 GWh en 2024 (174 ktep, BEP 2024).
+-->
 
 ---
+<!-- _class: normalSlide conNota mensaje -->
 
-# Una alerta desde Europa: Países Bajos
+<style scoped>
+ul { margin-top: 50px; }
+h3 { font-family: Asap, sans-serif; font-weight: 600; font-size: 1.15em; margin-top: 50px; }
+</style>
 
-<div class="grid grid-cols-5 gap-10" style="font-size: 0.85em; margin-top: 20px;">
-<div class="col-span-3">
+# El desafío es la red: cuándo y dónde se carga
 
-* Más de **14.000** grandes consumidores esperan conexión a la red: casi **+20 %** en un año.
-* Desde el 1/7/2026, las conexiones para **cargadores públicos no tienen prioridad** en la cola.
-* Nuevas conexiones de carga pública: 11.898 en 2023 (año pico), **5.172** en el primer semestre de 2026. Se espera que se estanquen.
-* TNO advierte que la congestión puede **frenar la transición** y propone gestión inteligente de la red y ubicación estratégica de cargadores.
+* Si todos cargan de noche: del orden de **700 MW** adicionales, frente a un máximo del sistema de ~2.500 MW.
 
-</div>
-<div class="col-span-2" style="border-left: 4px solid rgb(20,50,100); padding-left: 24px;">
+* La **carga rápida** concentra mucha potencia en un solo punto de la red.
 
-<h3 style="color: rgb(20,50,100); margin-top: 0;">Uruguay</h3>
+### Hay que gestionar la red para evitar la congestión, sin depender de grandes inversiones.
 
-* Generación con margen: el parque liviano requeriría ~16 %.
-* Red pública de carga en expansión.
-* **Estamos a tiempo de anticiparnos:** gestionar la red antes de que la congestión sea un problema.
+> Cálculo ilustrativo: ~2.000 GWh/año cargados uniformemente en una ventana de 8 h. Máximo de demanda: 2.507 MW (7/3/2025, BEN 2025).
 
-</div>
-</div>
-
-<div style="position: absolute; bottom: 55px; left: 70px; right: 70px; font-size: 11pt; color: rgb(20,50,100,.75);">
-
-Fuentes: TNO, *The impact of grid congestion and a waiting list on the mobility transition* (noviembre 2025); Netbeheer Nederland, informe de avance del programa de congestión (octubre 2026, vía Solar Magazine).
-
-</div>
+<!--
+Notas:
+- ~2.000 GWh/año son ~5,6 GWh por día; en 8 h → ~700 MW.
+- Si toda la carga fuera domiciliaria: del orden de +45 % sobre el consumo residencial de UTE (4.488 GWh en 2024, INE). Es un techo.
+- Un cargador rápido de 60 kW en un punto de la red de distribución puede exigir reforzar la conexión.
+-->
 
 ---
+<!-- _class: normalSlide conNota -->
 
-# Nuestro equipo:
+<style scoped>
+section {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto auto;
+  column-gap: 50px;
+  align-content: center;
+}
+section > p { grid-column: 1; grid-row: 1; margin: 0; }
+section > ul { grid-column: 1; grid-row: 2; }
+section > h3 {
+  grid-column: 2; grid-row: 1 / span 2; align-self: center;
+  border-left: 4px solid rgb(20,50,100); padding-left: 24px;
+  font-family: Asap, sans-serif; font-weight: 400; font-size: 1em; color: #222;
+}
+section > h3 strong { display: block; color: rgb(20,50,100); font-size: 1.3em; font-weight: 600; margin-top: 10px; }
+</style>
 
+# Europa ya lo está viviendo
 
-<div style="text-align: center; color: rgb(20,50,100); font-weight: bold">
-Grupo de Matemática Aplicada a Telecomunicaciones y Energía
+**Países Bajos:**
 
-Universidad ORT Uruguay
+* **14.000** grandes consumidores esperan conexión a la red.
+* Desde julio de 2026, los **cargadores públicos van al final de la cola**.
 
-</div>
+### Uruguay: **Estamos a tiempo de anticiparnos.**
 
-<br />
+> Fuentes: TNO, *The impact of grid congestion and a waiting list on the mobility transition* (noviembre 2025); Netbeheer Nederland, informe de avance del programa de congestión (octubre 2026, vía Solar Magazine).
 
-**Investigadores:**
-
- * Fernando Paganini (SNI Nivel III)
- * Andrés Ferragut (SNI Nivel II)
-
-**Colaborador:**
-
- * Enrique Briglia
-
-<!-- TODO (Andrés): agregar colaboradores y la colaboración con el Faraday Lab (FIng-Udelar). -->
+<!--
+Notas:
+- TNO (nov. 2025): >14.000 grandes consumidores en espera, casi +20 % en un año. Advierte que la congestión puede frenar la transición; propone gestión inteligente de la red y ubicación estratégica de cargadores.
+- Desde el 1/7/2026 rige un marco de priorización: las conexiones para cargadores públicos no tienen prioridad.
+- Nuevas conexiones de carga pública: 11.898 en 2023 (pico); 5.172 en el primer semestre de 2026. Se espera estancamiento.
+- Uruguay: margen de generación (~16 %) y red pública de carga en expansión.
+-->
 
 ---
+<!-- _class: normalSlide conNota mensaje -->
 
-# 2ndLife: segunda vida para baterías de vehículos eléctricos
+<style scoped>
+table { margin: 30px auto 0 auto; font-size: 0.8em; }
+th { background: rgb(20,50,100); color: white; }
+h3 { font-family: Asap, sans-serif; font-weight: 600; font-size: 1.05em; margin-top: 20px; }
+</style>
 
-<div class="grid grid-cols-2 gap-10">
-<div>
+# La academia uruguaya en electromovilidad
 
-**Idea:** reutilizar baterías de vehículos eléctricos fuera de circulación como almacenamiento junto a un **cargador rápido**.
+| Aporte | Quién |
+|---|---|
+| Ensayo y segunda vida de baterías | Faraday Lab (FIng-Udelar) |
+| Plataforma abierta de baterías y electromovilidad | Uruguay GreenTech (ANII + Udelar) |
+| Optimización y gestión de la carga y de la red | Grupo MATE (FI-ORT) |
+| Datos y análisis del sector eléctrico | Observatorio de Energía (UCU) |
+| Formación en energías renovables y control | UTEC |
+| Financiamiento que conecta academia y sector | Fondo Sectorial de Energía (ANII, UTE, ANCAP, DNE) |
+
+### La academia uruguaya está preparada y ya está aportando.
+
+<!--
+Notas:
+- Mencionar al pasar: aportes de nivel internacional.
+- Faraday Lab: grupo interdisciplinario de FIng-Udelar creado en 2025; ensayo de baterías, segunda vida, infraestructura de carga; financiado por ANII, UTE y ANCAP.
+- Uruguay GreenTech: laboratorio de innovación abierta ANII-Udelar (2026), con una plataforma de baterías y electromovilidad.
+- Fondo Sectorial de Energía: desde 2008; líneas 2026 incluyen movilidad sostenible, gestión de la red y baterías.
+-->
+
+---
+<!-- _class: normalSlide conNota -->
+
+<style scoped>
+h3 { text-align: center; color: rgb(20,50,100); font-family: Asap, sans-serif; font-weight: 600; font-size: 1em; margin: 50px 0 40px 0; }
+p { margin-top: 24px; }
+</style>
+
+# Grupo MATE
+
+### Matemática Aplicada a Telecomunicaciones y Energía · Facultad de Ingeniería, Universidad ORT Uruguay
+
+**Equipo:** Fernando Paganini y Andrés Ferragut · Diego Goldsztajn (posdoc) · Matías Carrasco · Enrique Briglia
+
+**Qué hacemos:** control, optimización y probabilidad aplicados a redes, de internet a la red eléctrica, con algoritmos que se prueban en sistemas reales.
+
+Publicaciones internacionales y colaboración con el Faraday Lab (FIng-Udelar) en 2ndLife.
+
+> grupo-mate.github.io
+
+---
+<!-- _class: normalSlide conNota mensaje -->
+
+<style scoped>
+h3 { font-family: Asap, sans-serif; font-weight: 600; font-size: 1.3em; margin-top: 60px; }
+ul { margin-top: 30px; }
+blockquote { font-size: 13pt; color: rgba(20,50,100,.85); }
+</style>
+
+# 2ndLife: carga rápida sin reforzar la red
+
+### Batería reutilizada + algoritmo de control
 
 * La batería aporta energía en los picos de carga, **sin aumentar la potencia tomada de la red**.
-* Permite instalar carga rápida donde la red existente no tiene capacidad suficiente.
 * Extiende la vida útil de la batería: **economía circular**.
 
-</div>
-<div>
-
-**Socios:**
-
-* Faraday Lab, Facultad de Ingeniería, Udelar
-* Facultad de Ingeniería, Universidad ORT Uruguay
-* Ingener S.A.
-
-**Financiamiento:** ANII, Proyectos Innovadores de Crédito Fiscal.
-
-**Prototipo inaugurado** el 22/10/2026 en FIng-Udelar.
-
-</div>
-</div>
+> Faraday Lab (FIng-Udelar) · FI-Universidad ORT Uruguay · Ingener S.A. · Financiado por ANII (Proyectos Innovadores de Crédito Fiscal) · Prototipo inaugurado el 22/10/2026
 
 ---
+
+<style scoped>
+p { display: flex; justify-content: center; gap: 40px; margin-top: 40px; }
+p img { width: 540px; height: 480px; object-fit: cover; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); }
+p img:last-child { object-position: right; }
+</style>
 
 # 2ndLife
 
-<!-- Fotos: guardarlas como images/2ndlife_1.jpg e images/2ndlife_2.jpg (o cambiar los nombres acá). -->
-
-<div class="grid grid-cols-2 gap-10" style="margin-top: 40px;">
-<div style="text-align:center">
-<img class="card" style="width: 100%; height: 480px; object-fit: cover;" src="images/2ndlife-baterias-electricas.jpg" />
-</div>
-<div style="text-align:center">
-<img class="card" style="width: 100%; height: 480px; object-fit: cover;" src="images/vehiculos-electricos-proyecto.jpg" />
-</div>
-</div>
+![](images/2ndlife-baterias-electricas.jpg) ![](images/vehiculos-electricos-proyecto.jpg)
 
 ---
 
-# El prototipo
+<style scoped>
+p:first-of-type { text-align: center; margin-top: 60px; }
+ul { margin-top: 40px; }
+</style>
 
-<div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 30px; font-size: 17pt; line-height: 1.3; text-align: center;">
+# 60 kW de carga con 40 kW de red
 
-<div style="border: 3px solid rgb(20,50,100); border-radius: 12px; padding: 10px 18px; width: 180px;">
-<b>Red</b><br/>máx. 40 kW
-</div>
+![w:1000](images/prototipo_diagrama.svg)
 
-<div style="font-size: 26pt; color: rgb(20,50,100);">&rarr;</div>
+* La batería aporta lo que falta y **se recarga durante los períodos sin uso**.
 
-<div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-<div style="background: rgb(20,50,100); color: white; border-radius: 12px; padding: 10px 18px; width: 300px;">
-<b>Control</b><br/>balancea red y batería
-</div>
-<div style="font-size: 24pt; color: rgb(20,50,100); line-height: 1;">&#8645;</div>
-<div style="border: 3px solid rgb(20,50,100); border-radius: 12px; padding: 10px 18px; width: 300px;">
-<b>Batería reutilizada</b><br/>30 kWh
-</div>
-</div>
-
-<div style="font-size: 26pt; color: rgb(20,50,100);">&rarr;</div>
-
-<div style="border: 3px solid rgb(20,50,100); border-radius: 12px; padding: 10px 18px; width: 180px;">
-<b>Cargador DC</b><br/>60 kW
-</div>
-
-</div>
-
-<div style="font-size: 0.85em; margin-top: 10px;">
-
-* Batería de **30 kWh** recuperada de un vehículo siniestrado y cargador rápido DC de **60 kW**.
-* El algoritmo de control balancea los aportes de la red (**máx. 40 kW**) y de la batería para sostener la potencia del cargador **sin exigir a la red**.
-* La batería se recarga durante los períodos sin uso.
-
-</div>
+<!--
+Notas:
+- Batería de 30 kWh recuperada de un vehículo siniestrado; cargador DC de 60 kW.
+- P_cargador(t) = P_red(t) + P_bat(t), con P_red(t) ≤ 40 kW.
+- Con un vehículo a 60 kW: la red aporta 40 kW y la batería 20 kW → ~1,5 h a plena potencia (cálculo ideal).
+- Sin vehículos: la batería se recarga a ≤ 40 kW → ~45 min para recargarla completa (cálculo ideal).
+- Prototipo recién inaugurado: la validación en condiciones reales es la próxima etapa.
+- Mencionar al pasar: soluciones de este tipo se están desplegando en el mundo.
+  - Con baterías de segunda vida: Audi (Berlín, 2023), buffer con baterías de autos de prueba para cargadores de 320 kW sobre una conexión existente; Elywhere + Evyon (Noruega), carga rápida con módulos de baterías reutilizados.
+  - Con baterías nuevas: ADS-TEC / JOLT (Alemania), cargadores ultrarrápidos con batería en estaciones de servicio.
+  - En la región: protocolos de segunda vida de baterías en Chile (LiBR3, 2026).
+-->
 
 ---
 
-# Cómo funciona
+<style scoped>
+ol { margin-top: 50px; font-size: 1.1em; }
+</style>
 
-En cada instante, la potencia entregada al vehículo se reparte entre red y batería:
+# Mensajes para llevarse
 
-$$
-P_{\text{cargador}}(t) = P_{\text{red}}(t) + P_{\text{bat}}(t), \qquad P_{\text{red}}(t) \le 40 \text{ kW}.
-$$
+1. **La energía está:** electrificar el parque liviano requiere una fracción acotada de la generación.
 
-<div class="grid grid-cols-2 gap-10">
-<div>
+2. **El desafío es la red:** hay que gestionarla para evitar la congestión. En Uruguay estamos a tiempo.
 
-**Con un vehículo cargando a 60 kW:**
+3. **La academia uruguaya está preparada** y ya está aportando.
 
-* La red aporta 40 kW y la batería, los 20 kW restantes.
-* Con 30 kWh, la batería sostiene la carga a plena potencia del orden de **1,5 h** (cálculo ideal).
+4. **2ndLife** es un ejemplo concreto: baterías reutilizadas para sumar carga rápida sin reforzar la red.
 
-</div>
-<div>
-
-**Sin vehículos:**
-
-* La batería se recarga desde la red, dentro del mismo límite.
-* Recargarla por completo lleva del orden de **45 min** a 40 kW (cálculo ideal).
-
-</div>
-</div>
-
-<div style="position: absolute; bottom: 55px; left: 70px; right: 70px; font-size: 11pt; color: rgb(20,50,100,.75);">
-
-Tiempos ideales: sin pérdidas, sin límites de estado de carga ni curvas de carga del vehículo. El prototipo está recién inaugurado; la validación en condiciones reales es la próxima etapa.
-
-</div>
-
----
-
-# ¿Por qué tiene sentido en Uruguay?
-
-* **El parque eléctrico crece rápido:** unos 35.000 vehículos eléctricos en circulación y 20 % de los 0 km vendidos en 2025. Eso implica una oferta creciente de baterías usadas y de vehículos siniestrados.
-
-* **La red de carga pública se expande:** UTE tiene 531 puntos de carga (367 DC) y apunta a 1.000 en 2027. La capacidad de la red en cada sitio es uno de los criterios para ubicarlos.
-
-* **Mucha generación renovable variable:** con una matriz ~98 % renovable, recargar la batería en horas de baja demanda aprovecha energía de bajo costo.
-
-* **Evita reforzar la conexión:** un cargador de 60 kW puede operar con una conexión de 40 kW, en lugar de exigir a la red la potencia completa.
-
-<div style="position: absolute; bottom: 55px; left: 70px; right: 70px; font-size: 11pt; color: rgb(20,50,100,.75);">
-
-Fuentes: Presidencia/UTE (setiembre 2026, parque y red de carga); Ámbito (julio 2026, criterios de UTE para ubicar cargadores); ACAU (ventas 2025); MIEM-DNE (Balance Energético Nacional 2025).
-
-</div>
-
----
-
-# Conclusiones
-
-
-<div class="grid grid-cols-2 gap-10" style="font-size: 0.85em;">
-<div>
-
-* La energía para electrificar el parque liviano es una fracción acotada de la generación: **el desafío es la red**.
-
-* Europa ya enfrenta la congestión. En Uruguay estamos a tiempo de anticiparnos *gestionando* la red.
-  
-* **2ndLife:** baterías reutilizadas y control para sumar carga rápida sin reforzar la red.
-
-* **Próximo paso:** validar el prototipo en condiciones reales.
-  
-</div>
-<div style="text-align:right">
-<br />
-<br />
-<img width=90% class="card"  src=images/movilidad_electrica.jpg />
-</div>
-</div>
-
+<!--
+Notas (por qué tiene sentido en Uruguay):
+- El parque eléctrico crece rápido: ~35.000 vehículos eléctricos en circulación; 20 % de los 0 km vendidos en 2025 fueron eléctricos (ACAU). Cada vez habrá más baterías para una segunda vida.
+- La red de carga pública se expande: UTE tiene 531 puntos (367 DC), meta de 1.000 en 2027; evalúa la capacidad de la red en cada sitio.
+- Matriz ~98 % renovable: recargar la batería en horas de baja demanda aprovecha energía de bajo costo.
+-->
 
 ---
 
