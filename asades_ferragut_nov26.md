@@ -25,7 +25,7 @@ section.conNota blockquote p { text-align: left; margin: 0; }
 section.mensaje h3 { text-align: center; color: rgb(20,50,100); }
 </style>
 
-![bg left:20%](images/fondo.png)
+![bg left:20%](images/fondo.jpg)
 
 # Electromovilidad: desafíos para la red eléctrica.
 
@@ -269,7 +269,7 @@ Notas (por qué tiene sentido en Uruguay):
 <!-- _class: titleSlide -->
 
 
-![bg left:20%](images/fondo.png)
+![bg left:20%](images/fondo.jpg)
 
 # Muchas gracias
 
