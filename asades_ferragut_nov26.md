@@ -181,7 +181,7 @@ p { margin-top: 24px; }
 
 Publicaciones internacionales y colaboración con el Faraday Lab (FIng-Udelar) en 2ndLife.
 
-> grupo-mate.github.io
+### [grupo-mate.github.io](https://grupo-mate.github.io)
 
 ---
 <!-- _class: normalSlide conNota mensaje -->
